@@ -38,3 +38,8 @@ int  num = 42
 int* ptr = &n         // create point by using * operator, storing addr of num -> & "reference operator"
 printf("%d\n", *ptr); // * operator dereferences pointer and returns its value
 ```
+
+## notes
+
+- [a deep dive how slow select * is](https://www.youtube.com/watch?v=wybjsKtA9hI)
+- also check out sys-calls e.g. read `man 2 read` linux man page, `ssize_t read(int fd, void *buf, size_t count)`

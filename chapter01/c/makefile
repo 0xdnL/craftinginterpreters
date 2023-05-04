@@ -16,3 +16,7 @@ run: compile
 
 clean:
 	rip helloworld
+
+
+ll: linkedlist.c
+	$(COMPILER) -o linkedlist $< && ./linkedlist
