@@ -24,7 +24,7 @@
 
 int get_string_length(char *str) {
   int offset = 0;
-  while(str[offset]!=0) {
+  while (str[offset]!=0) {
     offset++;
   }
   return offset;
@@ -32,7 +32,7 @@ int get_string_length(char *str) {
 
 void copy_string(char *from, char *to) {
   int offset = 0;
-  while(from[offset] != 0) {
+  while (from[offset] != 0) {
     to[offset] = from[offset];
     offset++;
   }
@@ -43,14 +43,13 @@ void reverse_string(char *str) {
 
   int len = get_string_length(str) - 1;
   int index = 0, end = len;
-  char temp[1];
+  char temp;
 
-  while(index <= len/2) {
-    temp[0] = str[index];
-    str[index] = str[end];
-    str[end] = temp[0];
+  while (index <= len/2) {
+    temp = str[index];
+    str[index] = str[end-index];
+    str[end-index] = temp;
     index++;
-    end--;
   }
 }
 
