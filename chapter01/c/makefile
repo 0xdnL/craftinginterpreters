@@ -1,22 +1,24 @@
-COMPILER := gcc
-# COMPILER := cc
+CC := gcc
 
 .PHONY: all clean
 
 all: compile run
 
 compile: helloworld.c
-	$(COMPILER) -o helloworld $<
+	$(CC) -o helloworld $<
 
-compileDebugging: helloworld.c
-	$(COMPILER) -g $<
+gdb: helloworld.c
+	$(CC) -g $<
+
+objectFile: helloworld.c
+	$(CC) -c $< -o helloworld.o
 
 run: compile
 	./helloworld
 
 clean:
-	rip helloworld
+	rip helloworld helloworld.o
 
 
 ll: linkedlist.c
-	$(COMPILER) -o linkedlist $< && ./linkedlist
+	$(CC) -o linkedlist $< && ./linkedlist
