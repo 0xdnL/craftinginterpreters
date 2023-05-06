@@ -5,7 +5,7 @@ int main(int argc, char **argv) {
 
   // using syscall open, read, write and close compared to libc-calls
   FILE *file_to_read  = fopen("05sometext.txt", "r");
-  FILE *file_to_write = fopen( "05newtext.txt", "w");
+  FILE *file_to_write = fopen("05newtext.txt", "w");
 
   if (file_to_read == NULL || file_to_write == NULL) {
     printf("one file can't be fopened.\n");
@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
       c = '!';
       printf("found a dot.\n");
     }
-    fputc(c, file_to_write);
+    fputc(c, file_to_write);    // gets buffered
   }
 
   fclose(file_to_read);
