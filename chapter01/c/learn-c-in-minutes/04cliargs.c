@@ -7,4 +7,6 @@ int main(int argc, char **argv) {
   for (int i=0; i < argc; i++) {
     printf("argv[%d]=%s, %i, %f\n", i, argv[i], atoi(argv[i]), atof(argv[i]));
   }
+
+  return EXIT_SUCCESS;
 }
