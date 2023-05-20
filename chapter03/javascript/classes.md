@@ -127,11 +127,15 @@ class Bar {
     return this.x
   }
 }
+const bar = new Bar(4); bar.getX();
 
-function Bar(x) {
+function Foo(x) {
   this.x = x;
 }
-Bar.prototype.getX = function getX() {
+Foo.prototype.getX = function getX() {
   return this.x;
 }
+const foo = new Foo(4); foo.getX();
 ```
+- mehods are shared via prototypes
+- fields are stored on actual instances
